@@ -1,0 +1,32 @@
+<div>
+    <h1 mat-dialog-title style="font-weight: bold;">User Details</h1>
+    <div mat-dialog-content [formGroup]="userForm" style="display: flex;flex-direction: column;">
+        <!-- <mat-form-field>
+            <input matInput placeholder="First Name" formControlName="firstName">
+         
+        </mat-form-field> -->
+        <mat-form-field>
+            <input matInput placeholder="name" formControlName="name">
+            <!-- <mat-error *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched">Last Name is
+                required</mat-error>-->
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <!-- <mat-error *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched">Email is
+                required</mat-error>
+            <mat-error *ngIf="userForm.get('email')?.hasError('email') && userForm.get('email')?.touched">Invalid email
+                format</mat-error> -->
+        </mat-form-field>
+        <div formGroupName="address">
+            <mat-form-field style="width: 100%;">
+                <input matInput placeholder="Address" formControlName="city">
+
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions style="display: flex;justify-content: center;">
+        <button style="background-color: #b7b5b5;" mat-button (click)="onSave()">Save</button>
+        <button style="background-color: #b7b5b5;" mat-button (click)="onCancel()">Cancel</button>
+    </div>
+</div>
