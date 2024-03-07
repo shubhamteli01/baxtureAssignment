@@ -38,6 +38,8 @@ export class DialogueComponent implements OnInit {
     console.log(this.userForm)
     if (this.userForm?.valid && !this.userForm.value.cancelAction) {
       this.dialogRef.close({ action: 'add', data: this.userForm.value });
+    } else {
+      alert('Please provide correct inputs; validations are applied.')
     }
   }
 
